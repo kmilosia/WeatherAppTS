@@ -1,0 +1,41 @@
+@import '@fontsource/poppins/200.css';
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/100.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/poppins/800.css';
+@import '@fontsource/poppins/900.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .settings-p{
+        @apply text-lg font-light cursor-default;
+    }
+    .icon-size{
+        @apply text-2xl lg:text-3xl;
+    }
+    .scrollbar-default{
+        @apply scrollbar-thin scrollbar-thumb-white/25 scrollbar-track-white/50;
+    }
+    .modal-screen{
+        @apply fixed top-0 left-0 w-full h-full bg-slate-950 flex flex-col text-white p-6 lg:p-8 z-50;
+    }
+    .detail-container{
+        @apply backdrop-blur-lg flex-col flex bg-white/10 rounded-md px-6 lg:px-8 py-8 lg:py-10;
+    }
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.center-elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
