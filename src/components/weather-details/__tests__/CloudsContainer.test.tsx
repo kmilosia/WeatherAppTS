@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import '@testing-library/jest-dom'
-import { useForecastStore } from "../store/forecastStore"
-import CloudsContainer from "../components/weather-details/CloudsContainer"
+import { useForecastStore } from "../../../store/forecastStore"
+import CloudsContainer from "../CloudsContainer"
 
 const setClouds = (value: number) => {
     useForecastStore.setState({ forecast: { current: { cloud: value } } })

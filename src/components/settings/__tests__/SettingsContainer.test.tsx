@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 import '@testing-library/jest-dom'
-import SettingsContainer from "../components/settings/SettingsContainer"
+import SettingsContainer from "../SettingsContainer"
 
 describe("SettingsContainer", () => {
 

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import '@testing-library/jest-dom'
-import UnitsDegreesSpan from "../components/UnitsDegreesSpan"
-import { useSettingsStore } from "../store/settingsStore";
+import UnitsDegreesSpan from "../UnitsDegreesSpan"
+import { useSettingsStore } from "../../store/settingsStore"
 
 describe("UnitsDegreesSpan", () => {
     test("units displayed as C when units in store set to metric", () => {

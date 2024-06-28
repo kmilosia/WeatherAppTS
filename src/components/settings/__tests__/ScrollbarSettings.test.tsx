@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import '@testing-library/jest-dom'
-import { useSettingsStore } from "../store/settingsStore";
-import ScrollbarSettings from "../components/settings/ScrollbarSettings";
+import ScrollbarSettings from "../ScrollbarSettings";
+import { useSettingsStore } from "../../../store/settingsStore";
 
 describe("ScrollbarSettings", () => {
     let changeScrollbarMock = jest.spyOn(useSettingsStore.getState(), 'toggleScrollbar');

@@ -31,7 +31,7 @@ const UVContainer = () => {
         <DetailHeader title="UV Index" icon={WiDaySunny} />
          <div className='flex text-5xl my-4 items-baseline'>
             <p className='mx-2'>{forecast.current.uv}</p>
-            <div className={`h-3 w-3 rounded-full ${uvColor}`}></div>
+            <div data-testid="uv-info-color" className={`h-3 w-3 rounded-full ${uvColor}`}></div>
         </div>
         {uvinfo && <p className='mt-2'>{uvinfo}</p>}
     </div>

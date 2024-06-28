@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import '@testing-library/jest-dom'
-import ToggleSwitch from "../components/ToggleSwitch"
+import ToggleSwitch from "../ToggleSwitch"
 
 describe("ToggleSwitch", () => {
     let mockAction = jest.fn()

@@ -26,7 +26,7 @@ const WindContainer = () => {
     <div className='detail-container'>
         <DetailHeader title="Wind" icon={WiStrongWind} />
         <div className='flex text-5xl my-4 items-center'>
-            <p className='mx-2'>{units === 'Metric' ? forecast.current.wind_kph : forecast.current.wind_mph}<span className='text-lg'>{units === 'Metric' ? ' km/h' : ' mi/h'}</span></p>
+            <p data-testid="wind-parag" className='mx-2'>{units === 'Metric' ? forecast.current.wind_kph : forecast.current.wind_mph}<span data-testid="unit-wind-span" className='text-lg'>{units === 'Metric' ? ' km/h' : ' mi/h'}</span></p>
         </div>
         {windInfo && <p className='mt-2'>{windInfo}. Wind direction {forecast.current.wind_dir}</p>}
     </div>
