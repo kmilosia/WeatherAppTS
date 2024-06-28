@@ -7,7 +7,12 @@ import useTimeFormat from '../hooks/useTimeFormat';
 import AddLocationButton from '../components/AddLocationButton';
 import { useSettingsStore } from '../store/settingsStore';
 import Footer from '../components/Footer';
-import WeatherDetails from '../components/WeatherDetails';
+import PressureContainer from '../components/weather-details/PressureContainer';
+import UVContainer from '../components/weather-details/UVContainer';
+import HumidityContainer from '../components/weather-details/HumidityContainer';
+import PrecipitationContainer from '../components/weather-details/PrecipitationContainer';
+import CloudsContainer from '../components/weather-details/CloudsContainer';
+import WindContainer from '../components/weather-details/WindContainer';
 
 const Forecast = () => {
     const { toggleMenu, closeMenu } = useMenuStore()
@@ -47,7 +52,14 @@ const Forecast = () => {
                             <p className='font-extralight'>Details</p>
                             <div className='w-full h-[1px] bg-white/30'></div>
                         </div>
-                        <WeatherDetails />
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 my-3">
+                            <PressureContainer />
+                            <UVContainer />
+                            <HumidityContainer />
+                            <PrecipitationContainer />
+                            <CloudsContainer />
+                            <WindContainer />
+                        </div>
                     </div>
                 </div>
             }
