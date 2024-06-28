@@ -24,9 +24,9 @@ const HumidityContainer = () => {
     <div className='detail-container'>
         <DetailHeader title="Humidity" icon={WiRaindrops} />
          <div className='flex text-5xl my-4 items-center'>
-            <p className='mx-2'>{forecast.current.humidity}%</p>
+            <p data-testid='humid-level' className='mx-2'>{forecast.current.humidity}%</p>
         </div>
-        {humidityInfo && <p className='mt-auto'>Dew point {units === 'metric' ? forecast.current.dewpoint_c : forecast.current.dewpoint_f}°. {humidityInfo}</p>}
+        {humidityInfo && <p data-testid='humid-info' className='mt-auto'>Dew point {units === 'Metric' ? forecast.current.dewpoint_c : forecast.current.dewpoint_f}°. {humidityInfo}</p>}
     </div>
   )
 }

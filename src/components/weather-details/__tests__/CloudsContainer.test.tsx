@@ -7,20 +7,40 @@ const setClouds = (value: number) => {
     useForecastStore.setState({ forecast: { current: { cloud: value } } })
 }
 describe("CloudsContainer", () => {
-    test("correct condition is rendered with value 40", async () => {
+    test("clouds percent value is rendered correct", () => {
         setClouds(40)
         render(<CloudsContainer />)
-        let parag = screen.getByText("40%")
-        let title = screen.getByText("The sky is partly cloudy at the moment")
-        expect(parag).toBeInTheDocument() 
-        expect(title).toBeInTheDocument() 
+        const label = screen.getByText("40%")
+        expect(label).toBeInTheDocument() 
     })
-    test("correct condition is rendered with value 5", async () => {
-        setClouds(5)
+    test("renders clear sky for value lower than 10", () => {
+        setClouds(9)
         render(<CloudsContainer />)
-        let parag = screen.getByText("5%")
-        let title = screen.getByText("The sky is clear at the moment")
-        expect(parag).toBeInTheDocument() 
-        expect(title).toBeInTheDocument() 
+        const label = screen.getByText("The sky is clear at the moment")
+        expect(label).toBeInTheDocument() 
+    })
+    test("renders mostly clear sky for value higher than 10 and lower than 30", () => {
+        setClouds(20)
+        render(<CloudsContainer />)
+        const label = screen.getByText("The sky is mostly clear at the moment")
+        expect(label).toBeInTheDocument() 
+    })
+    test("renders partly cloudy sky for value higher than 30 and lower than 70", () => {
+        setClouds(54)
+        render(<CloudsContainer />)
+        const label = screen.getByText("The sky is partly cloudy at the moment")
+        expect(label).toBeInTheDocument() 
+    })
+    test("renders mostly cloudy sky for value lower than 90 and higher than 70", () => {
+        setClouds(80)
+        render(<CloudsContainer />)
+        const label = screen.getByText("The sky is mostly cloudy at the moment")
+        expect(label).toBeInTheDocument() 
+    })
+    test("renders cloudy sky for value higher than 90", () => {
+        setClouds(98)
+        render(<CloudsContainer />)
+        const label = screen.getByText("The sky is cloudy at the moment")
+        expect(label).toBeInTheDocument() 
     })
 })
