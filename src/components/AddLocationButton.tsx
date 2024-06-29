@@ -10,21 +10,19 @@ const AddLocationButton = () => {
   const forecast = useForecastStore((state) => state.forecast)
   const exists = checkCityExists(forecast.location.name)
 
-  const handleLocation = () => {
-    if (!exists) {
-      addLocation(forecast.location.name)
-      addPopup("Location has been added to your list!")
-    }else{
-      removeLocation(forecast.location.name)
-      addPopup("Location has been removed from your list!")
-    }
+  const handleRemove = () => {
+    removeLocation(forecast.location.name)
+    addPopup("Location has been removed from your list!")
+  }
+  const handleAdd = () => {
+    addLocation(forecast.location.name)
+    addPopup("Location has been added to your list!")
   }
 
   return (
-    <button onClick={handleLocation}>
-      {!exists ? <HiPlus className='icon-size' /> : <HiMinus className='icon-size'/>}
-    </button>
-    
+    exists ? 
+    <button onClick={handleRemove}><HiMinus data-testid='minus-icon' className='icon-size'/></button>
+    : <button onClick={handleAdd}><HiPlus data-testid='plus-icon' className='icon-size' /></button>
   );
 }
 
