@@ -17,14 +17,14 @@ describe("AddLocationButton", () => {
         jest.clearAllMocks()
     })
     test("renders minus icon if city exists and click runs remove actions", () => {
-        useForecastStore.setState({ forecast: { location: { name: 'Warsaw' } } })
+        useForecastStore.setState({ forecast: { location: { name: 'London' } } })
         checkCityExists.mockReturnValue(true);
         render(<AddLocationButton />)
         const removeIcon = screen.queryByTestId('minus-icon')
         expect(removeIcon).toBeInTheDocument()
         const button = screen.getByRole('button')
         fireEvent.click(button)
-        expect(removeLocationMock).toHaveBeenCalled()
+        expect(removeLocationMock).toHaveBeenCalledWith('London')
         expect(addPopupMock).toHaveBeenCalledWith('Location has been removed from your list!')
     })
     test("renders plus icon if city doesn't exist and click runs add actions", () => {
@@ -35,7 +35,7 @@ describe("AddLocationButton", () => {
         expect(removeIcon).toBeInTheDocument()     
         const button = screen.getByRole('button')
         fireEvent.click(button)
-        expect(addLocationMock).toHaveBeenCalled()
+        expect(addLocationMock).toHaveBeenCalledWith('Warsaw')
         expect(addPopupMock).toHaveBeenCalledWith('Location has been added to your list!')
    
     })
