@@ -20,4 +20,9 @@ Simple weather app created using data from https://www.weatherapi.com and https:
 ![Settings](https://github.com/kmilosia/WeatherAppTS/assets/122121974/edbc4433-6fb5-4534-aaea-01e32f053760)
 ![Search](https://github.com/kmilosia/WeatherAppTS/assets/122121974/dab23061-bddf-47cc-a6db-d116537ac1a7)
 
+![Forecast Mobile](https://github.com/kmilosia/WeatherAppTS/assets/122121974/61fd67d5-30e3-4695-a218-b81eab563714)
+![Menu Mobile](https://github.com/kmilosia/WeatherAppTS/assets/122121974/2681907e-1e9b-4d27-aecf-cba6738a05d2)
+![Search Mobile](https://github.com/kmilosia/WeatherAppTS/assets/122121974/192217b2-87bc-4c24-a788-4e8fda025510)
+![Settings Mobile](https://github.com/kmilosia/WeatherAppTS/assets/122121974/ba15c7b3-0dc1-4305-b329-8f5fec3baf9b)
+
 
